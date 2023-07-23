@@ -193,7 +193,7 @@ a:link, a:visited{
 	grid-template-rows: 1fr 0.04fr 1fr 0.04fr 1fr;
 	background-color:#e3e3e3;
 	height: 65%;
-	width: 50%;
+	width: 45%;
 	border-radius: 5%;
 	border: 3px  dashed #233142;
 	box-shadow: 5px 5px #f95959;
@@ -309,4 +309,20 @@ a:link, a:visited{
 	display:flex;
 	justify-content: center;
 	align-items: center;
+}
+
+[class^="box"]:hover{
+	background-color: #cccccc;
+	border-radius: 13%;
+}
+.player1{
+	background-image: url(close.svg);
+	background-size: 100% 100%;
+	background-position: center;
+}
+
+.player2{
+	background-image: url(circle-outline.svg);
+	background-size: 100% 100%;
+	background-position: center;
 }

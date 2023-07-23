@@ -31,3 +31,8 @@ for the logo and usernam, with an anchor tag.
 We can add blur to the box-shadow: https://css-tricks.com/almanac/properties/b/box-shadow/
 It is quite interesting how you can make some 3d effects using only css box shadow.
 If the blur shadow does not work, add postion: relative; to the element.
+
+When an image is inserted using the content attribute, you cannot edit the size of it.
+But you can edit its size and position with background-size and background-position.
+
+Stroke, fill and color are completely different attributes in svgs.

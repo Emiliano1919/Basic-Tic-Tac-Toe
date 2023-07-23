@@ -27,3 +27,7 @@ According to W3 school
 
 To set the entire space of the github logo and my username I wrapped the container, 
 for the logo and usernam, with an anchor tag.
+
+We can add blur to the box-shadow: https://css-tricks.com/almanac/properties/b/box-shadow/
+It is quite interesting how you can make some 3d effects using only css box shadow.
+If the blur shadow does not work, add postion: relative; to the element.

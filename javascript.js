@@ -39,7 +39,6 @@ const playerFactory=()=>{
 
 const gameboard = (() => {
     let game = [];
-    let result = null;
     let positions = 9;
     let turn = 1;
 
@@ -48,7 +47,6 @@ const gameboard = (() => {
         
     };
     const getTurn = () => turn;
-    const getWinner = () => result;
     
     const player1Play = (n) => {
         game[n-1] = 'X';
@@ -71,20 +69,21 @@ const gameboard = (() => {
    
 
     const check = () => {
-        array.forEach((slash,key) => {
+        winSituations.forEach((slash,key) => {
+            console.log(game[slash[0]]=== 'X');
+            
             if (game[slash[0]]=== 'X' && game[slash[1]] === 'X' && game[slash[2]] === 'X') {
                 result = 'player1';
+                alert(result);
             } else if (game[slash[0]]=== 'O' && game[slash[1]] === 'O' && game[slash[2]] === 'O'){
                 result = 'player2';
             } else if(positions===0){
                 result = 'tie';
-            } else{
-                result=null;
-            }
+            } 
         });
     };
 
-    return {turn:getTurn,player1Play,player2Play,restartGame,check,getWinner,};
+    return {game,turn:getTurn,player1Play,player2Play,restartGame,check,};
   })();
 
 const player1 = playerFactory();
@@ -101,13 +100,10 @@ btnStart.addEventListener('click', () => {
 });
 
 
-if (gameboard.getWinner()===null){
     box1.addEventListener('click', () => {
         if (gameboard.turn() % 2 === 1 && !(box1.classList.contains('player1') || box1.classList.contains('player2'))){
             box1.classList.add('player1');
             gameboard.player1Play(1);
-            console.log(gameboard.game);
-            console.log(gameboard.turn());
         } else if (gameboard.turn() % 2 === 0 && !(box1.classList.contains('player1') || box1.classList.contains('player2'))){
             box1.classList.add('player2');
             gameboard.player2Play(1);
@@ -213,10 +209,6 @@ if (gameboard.getWinner()===null){
         }
         gameboard.check();
     });
-} else{
-    alert(gameboard.getWinner());
-}
-
 
 
 

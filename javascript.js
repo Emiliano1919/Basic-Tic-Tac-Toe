@@ -21,8 +21,7 @@ btnStart.addEventListener('click', () => {
 });
 
 box1.addEventListener('click', () => {
-    box1.classList.add('player1')
-
+    box1.classList.add('player1');
 });
 
 

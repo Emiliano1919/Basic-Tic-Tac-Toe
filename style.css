@@ -82,6 +82,7 @@ h1,h2,h3,h4,h5,p,button{
     grid-area: header;
 	position: relative;
 	box-shadow: 0px 4px 4px #131921c0;
+	min-height: 70px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -104,8 +105,9 @@ h1,h2,h3,h4,h5,p,button{
 }
 .main{
     grid-area: main;
-	display: grid;
-	justify-items: center;
+	max-height: 691.38px;
+	display: flex;
+	justify-content: center;
     align-items: center;
 }
 
@@ -192,11 +194,14 @@ a:link, a:visited{
 	grid-template-columns: 1fr 0.04fr 1fr 0.04fr 1fr;
 	grid-template-rows: 1fr 0.04fr 1fr 0.04fr 1fr;
 	background-color:#e3e3e3;
-	height: 65%;
-	width: 45%;
+	width: clamp(50dvw,50dvw,900px);
+	height: 50dvw;
+	max-height: 75%;
+	max-width: 50%;
 	border-radius: 5%;
 	border: 3px  dashed #233142;
 	box-shadow: 5px 5px #f95959;
+	position: relative;
 }
 
 .row1{
@@ -313,7 +318,7 @@ a:link, a:visited{
 
 [class^="box"]:hover{
 	background-color: #cccccc;
-	border-radius: 13%;
+	border-radius: 14%;
 }
 .player1{
 	background-image: url(close.svg);

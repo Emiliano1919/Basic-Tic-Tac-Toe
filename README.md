@@ -26,7 +26,7 @@ According to W3 school
 
 
 To set the entire space of the github logo and my username I wrapped the container, 
-for the logo and usernam, with an anchor tag.
+for the logo and username, with an anchor tag.
 
 We can add blur to the box-shadow: https://css-tricks.com/almanac/properties/b/box-shadow/
 It is quite interesting how you can make some 3d effects using only css box shadow.
@@ -36,3 +36,12 @@ When an image is inserted using the content attribute, you cannot edit the size 
 But you can edit its size and position with background-size and background-position.
 
 Stroke, fill and color are completely different attributes in svgs.
+
+It is important to note when is it best to use flex or grid. For the gameboard it was
+way easier to implement responsiveness with flexbox.
+
+Dynamic view height will make the biggest container cover all available space in both
+a computer and a mobile device.
+
+To make the gameboard symmetrical it was easier to use dvw instead of a combination of
+dvw and dvh, since screens normally have different vw and vh.

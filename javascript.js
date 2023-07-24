@@ -57,7 +57,7 @@ const gameboard = (() => {
     
     const restartGame = () => {
         for (const key in game) {
-            delete game[key];
+            game[key]= ' ';
         }
         positions=9;
     };
@@ -124,6 +124,7 @@ btnReStart.addEventListener('click', () => {
     box7.classList.remove('player2');
     box8.classList.remove('player2');
     box9.classList.remove('player2');
+    gameboard.restartGame();
 });
 
 

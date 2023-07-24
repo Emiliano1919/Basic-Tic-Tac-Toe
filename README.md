@@ -45,3 +45,9 @@ a computer and a mobile device.
 
 To make the gameboard symmetrical it was easier to use dvw instead of a combination of
 dvw and dvh, since screens normally have different vw and vh.
+
+Features to add:
+-Score display
+-Only one person can win
+-Once someone wins the game cannot continue
+-Artificial Intelligence

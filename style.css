@@ -374,3 +374,9 @@ a:link, a:visited{
 	box-shadow: 5px 5px #f95959;
 	
 }
+
+/* Winner */
+.winner{
+	color: white;
+	font-size: 2rem;
+}

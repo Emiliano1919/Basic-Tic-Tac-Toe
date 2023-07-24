@@ -3,6 +3,7 @@ let btnStart = document.querySelector("#start");
 let modal = document.querySelector("#modal");
 let main = document.querySelector('.main');
 let btnReStart= document.querySelector('#restart');
+let winner = document.querySelector('#winner');
 
 /*The entire gameboard*/
 let box1 = document.querySelector(".box1");
@@ -41,6 +42,7 @@ const gameboard = (() => {
     let game = [];
     let positions = 9;
     let turn = 1;
+    let result = 0;
 
     for(let index = 0; index < 9; index++) {
         game[index] = ' ';
@@ -70,16 +72,21 @@ const gameboard = (() => {
 
     const check = () => {
         winSituations.forEach((slash,key) => {
-            console.log(game[slash[0]]=== 'X');
-            
             if (game[slash[0]]=== 'X' && game[slash[1]] === 'X' && game[slash[2]] === 'X') {
-                result = 'player1';
-                alert(result);
+                result=1;
+                winner.classList.remove('notOpen');
+                winner.textContent='Player 1 won';
+                winner.classList.add('winner');
             } else if (game[slash[0]]=== 'O' && game[slash[1]] === 'O' && game[slash[2]] === 'O'){
-                result = 'player2';
-            } else if(positions===0){
-                result = 'tie';
-            } 
+                result=2;
+                winner.classList.remove('notOpen');
+                winner.textContent='Player 2 won';
+                winner.classList.add('winner');
+            } else if(positions===0 && (result !==1||result!==2)){
+                winner.classList.remove('notOpen');
+                winner.textContent='Tie';
+                winner.classList.add('winner');
+            }
         });
     };
 
@@ -108,7 +115,7 @@ btnStart.addEventListener('click', () => {
             box1.classList.add('player2');
             gameboard.player2Play(1);
         }else{
-            alert('play another move');
+            alert('Play another move');
         }
         gameboard.check();
     });
@@ -121,7 +128,7 @@ btnStart.addEventListener('click', () => {
             box2.classList.add('player2');
             gameboard.player2Play(2);
         }else{
-            alert('play another move');
+            alert('Play another move');
         }
         gameboard.check();
     });
@@ -133,7 +140,7 @@ btnStart.addEventListener('click', () => {
             box3.classList.add('player2');
             gameboard.player2Play(3);
         }else{
-            alert('play another move');
+            alert('Play another move');
         }
         gameboard.check();
     });
@@ -145,7 +152,7 @@ btnStart.addEventListener('click', () => {
             box4.classList.add('player2');
             gameboard.player2Play(4);
         }else{
-            alert('play another move');
+            alert('Play another move');
         }
         gameboard.check();
     });
@@ -157,7 +164,7 @@ btnStart.addEventListener('click', () => {
             box5.classList.add('player2');
             gameboard.player2Play(5);
         }else{
-            alert('play another move');
+            alert('Play another move');
         }
         gameboard.check();
     });
@@ -169,7 +176,7 @@ btnStart.addEventListener('click', () => {
             box6.classList.add('player2');
             gameboard.player2Play(6);
         }else{
-            alert('play another move');
+            alert('Play another move');
         }
         gameboard.check();
     });
@@ -181,7 +188,7 @@ btnStart.addEventListener('click', () => {
             box7.classList.add('player2');
             gameboard.player2Play(7);
         }else{
-            alert('play another move');
+            alert('Play another move');
         }
         gameboard.check();
     });
@@ -193,7 +200,7 @@ btnStart.addEventListener('click', () => {
             box8.classList.add('player2');
             gameboard.player2Play(8);
         }else{
-            alert('play another move');
+            alert('Play another move');
         }
         gameboard.check();
     });
@@ -205,7 +212,7 @@ btnStart.addEventListener('click', () => {
             box9.classList.add('player2');
             gameboard.player2Play(9);
         }else{
-            alert('play another move');
+            alert('Play another move');
         }
         gameboard.check();
     });
@@ -231,6 +238,8 @@ btnReStart.addEventListener('click', () => {
     box7.classList.remove('player2');
     box8.classList.remove('player2');
     box9.classList.remove('player2');
+    winner.classList.remove('winner');
+    winner.textContent=null;
     gameboard.restartGame();
 });
 

@@ -107,8 +107,10 @@ h1,h2,h3,h4,h5,p,button{
     grid-area: main;
 	max-height: 691.38px;
 	display: flex;
+	flex-direction: column;
 	justify-content: center;
     align-items: center;
+	gap: 1.5rem;
 }
 
 #start{
@@ -330,4 +332,45 @@ a:link, a:visited{
 	background-image: url(circle-outline.svg);
 	background-size: 100% 100%;
 	background-position: center;
+}
+
+/*Restart button */
+.notOpen{
+	content: "";
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 10;
+	background-color: #455d7a;
+	color: #455d7a;
+	border: none;
+}
+
+
+.restart{
+	font-family: 'Courier New', Courier, monospace;
+	display: flex;
+	align-items: center;
+	background-color:  #233142;
+	color: white;
+	border: 1px  dashed #e3e3e3;
+	box-shadow: 5px 5px #f95959;
+	font-size: 1.1rem;
+	font-weight: 500;
+	border-radius: 5px;
+	height: 1.9rem;
+	width: fit-content;
+	padding-left: 1rem;
+	padding-right: 1rem;
+}
+
+.restart:hover{
+	border: 1px  dashed #233142;
+	background-color: #e3e3e3;
+	color:#f95959;
+	box-shadow: 5px 5px #f95959;
+	
 }
